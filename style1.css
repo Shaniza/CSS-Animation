@@ -1,0 +1,21 @@
+.container{
+    position: relative;
+    top:300px;
+    left:200px;
+    width: 500px;
+    height: 190px;
+    background-color: red;
+}
+.box{
+    width: 400px;
+    height: 20px;
+    background-color: yellowgreen;
+    animation-name: chaka;
+    animation-duration: 0.5s;
+    animation-iteration-count: 4;
+}
+@keyframes chaka{
+    from{transform: rotate(0deg)}
+    to{transform: rotate(360deg)}
+    
+}
