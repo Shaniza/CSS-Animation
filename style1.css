@@ -1,21 +1,69 @@
-.container{
-    position: relative;
-    top:300px;
-    left:200px;
-    width: 500px;
-    height: 190px;
-    background-color: red;
-}
-.box{
-    width: 400px;
-    height: 20px;
-    background-color: yellowgreen;
-    animation-name: chaka;
-    animation-duration: 0.5s;
-    animation-iteration-count: 4;
-}
-@keyframes chaka{
-    from{transform: rotate(0deg)}
-    to{transform: rotate(360deg)}
-    
-}
+
+        /* General Body Styling */
+        body {
+            margin: 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Solar System Container */
+        .solar-system {
+            position: relative;
+            width: 400px; /* Orbit container size */
+            height: 400px;
+        }
+
+        /* Sun Styling */
+        .sun {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            border-radius: 50%;
+            box-shadow: 0 0 30px yellow, 0 0 60px orange, 0 0 90px red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Earth's Orbit Path */
+        .orbit {
+            width: 300px; /* Orbit diameter */
+            height: 300px; /* Orbit diameter */
+            border: 1px dashed white; /* Dashed orbit path */
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Earth Styling */
+        .earth {
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            border-radius: 50%;
+            box-shadow: 0 0 10px lightblue, inset 0 -2px white;
+            position: absolute;
+            top: -10px; /* Start at the top of the orbit */
+            left: calc(50% - 10px); /* Center Earth in orbit */
+            animation: orbit-animation 10s linear infinite; /* Orbit Animation */
+        }
+
+        /* Keyframes for Earth's Orbit */
+        @keyframes orbit-animation {
+            from {
+                transform: rotate(0deg) translateX(150px) rotate(0deg);
+                /* translateX(150px): Moves Earth outward by half the orbit diameter (300px/2) */
+                /* rotate(0deg): Keeps Earth's orientation upright */
+            }
+            to {
+                transform: rotate(360deg) translateX(150px) rotate(-360deg);
+                /* rotate(-360deg): Counter-rotates Earth to keep it upright while orbiting */
+            }
+        }
+        
